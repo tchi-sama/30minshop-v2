@@ -11,16 +11,16 @@ function Navbar() {
       {/* // left */}
       <div className="flex-1 flex">
         <button className=" flex gap-2 items-center btn btn-sm">
-          <IoMdArrowBack />
+          <IoMdArrowBack size={18} />
           <span>dashboard</span>
         </button>
         <div className="divider lg:divider-horizontal"></div>
         <div className="flex gap-2">
           <button className="btn btn-sm">
-            <LuUndo2></LuUndo2>
+            <LuUndo2 size={16} ></LuUndo2>
           </button>
           <button className="btn btn-sm">
-            <LuRedo2></LuRedo2>
+            <LuRedo2 size={16}></LuRedo2>
           </button>
         </div>
       </div>
@@ -50,8 +50,8 @@ function Navbar() {
       {/* // right  */}
         
         <div className="flex-1 flex justify-end gap-2 items-center">
-            <button className="btn btn-sm ">save <FaRegSave></FaRegSave></button>
-            <button className="btn btn-sm btn-primary">go live <LuArrowUpRight ></LuArrowUpRight></button>
+            <button className="btn btn-sm ">save <FaRegSave size={16}></FaRegSave></button>
+            <button className="btn btn-sm btn-neutral">go live <LuArrowUpRight size={20} ></LuArrowUpRight></button>
         </div>
     </div>
   );
