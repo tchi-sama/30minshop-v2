@@ -50,7 +50,7 @@ function Navbar() {
       {/* // right  */}
         
         <div className="flex-1 flex justify-end gap-2 items-center">
-            <button className="btn btn-sm ">save <FaRegSave size={16}></FaRegSave></button>
+            <button className="btn btn-sm ">save <FaRegSave ></FaRegSave></button>
             <button className="btn btn-sm btn-neutral">go live <LuArrowUpRight size={20} ></LuArrowUpRight></button>
         </div>
     </div>
