@@ -3,11 +3,15 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 export interface toolsState {
-    toolSelected:number
+    toolSelected:number;
+    showLeftbar:boolean;
+    showRightbar:boolean;
 }
 
 const initialState : toolsState = {
-    toolSelected:2
+    toolSelected:0,
+    showLeftbar:true,
+    showRightbar:true,
 }
 
 export const toolsSlice = createSlice({
@@ -16,9 +20,20 @@ export const toolsSlice = createSlice({
     reducers:{
         setTool:(state,action)=>{
             state.toolSelected= action.payload
-        }
+            state.showLeftbar = true
+        },
+        closeLeftBar:(state)=>{state.showLeftbar=false},
+        openLeftBar:(state)=>{state.showLeftbar=true},
+        closeRightBar:(state)=>{state.showRightbar=false},
+        openRightBar:(state)=>{state.showRightbar=true},
     }
 })
 
-export const {setTool} = toolsSlice.actions;
+export const {
+    setTool,
+    closeLeftBar,
+    openLeftBar,
+    closeRightBar,
+    openRightBar
+} = toolsSlice.actions;
 export default toolsSlice.reducer;

@@ -30,9 +30,9 @@ function Tools() {
       {
         tools.map((tool,i)=>(
           toolSelected===i ?
-          <button className='btn bg-primary hover:bg-primary-focus text-white shadow-[0_5px_10px_2px_#570df815]  border-none '>{tool.icon}</button>
+          <button onClick={()=>dispatch(setTool(i))} className='btn bg-primary hover:bg-primary-focus text-white shadow-[0_5px_10px_2px_#570df815]  border-none '>{tool.icon}</button>
           :
-          <button onClick={()=>dispatch(setTool(i))} className='btn bg-white  border-none '>{tool.icon}</button>
+          <button onClick={()=>dispatch(setTool(i))} className='btn bg-transparent text-gray-500 border-none '>{tool.icon}</button>
         ))
       }
     </div>
