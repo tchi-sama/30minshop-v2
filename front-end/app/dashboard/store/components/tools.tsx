@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+// icons import
 import {TbSection} from "react-icons/tb"
 import {BiPlus} from "react-icons/bi"
 import {IoShareSocialOutline} from "react-icons/io5"
@@ -6,15 +7,34 @@ import {GoFile} from "react-icons/go"
 import {BsCardImage} from "react-icons/bs"
 import {IoSettingsOutline} from "react-icons/io5"
 
+// redux
+import { useDispatch,useSelector } from 'react-redux';
+import { setTool } from '@/app/GlobalRedux/Features/tools/toolsSlice'
+import { RootState } from '@/app/GlobalRedux/store'
+
+
+
+const tools = [
+  {name:"add section",icon:<BiPlus size={22}/>},
+  {name:"page sections",icon:<TbSection size={22}/>},
+  {name:"brand info",icon:<IoShareSocialOutline size={22}/>},
+  {name:"page",icon:<GoFile size={20}/>},
+  {name:"uploads",icon:<BsCardImage size={20}/>},
+  {name:"setting",icon:<IoSettingsOutline size={22}/>},
+]
 function Tools() {
+  const toolSelected = useSelector((state:RootState)=>state.tools.toolSelected)
+  const dispatch = useDispatch();
   return (
     <div className='bg-white p-2  flex flex-col gap-1'>
-        <button className='btn bg-primary hover:bg-primary-focus text-white shadow-[0_5px_10px_2px_#570df815]  border-none '><BiPlus size={22}/></button>
-        <button className='btn bg-white border-none '><TbSection size={22}/></button>
-        <button className='btn bg-white border-none '><IoShareSocialOutline size={22}/></button>
-        <button className='btn bg-white border-none '><GoFile size={20}/></button>
-        <button className='btn bg-white border-none '><BsCardImage size={20}/></button>
-        <button className='btn bg-white border-none '><IoSettingsOutline size={22}/></button>
+      {
+        tools.map((tool,i)=>(
+          toolSelected===i ?
+          <button className='btn bg-primary hover:bg-primary-focus text-white shadow-[0_5px_10px_2px_#570df815]  border-none '>{tool.icon}</button>
+          :
+          <button onClick={()=>dispatch(setTool(i))} className='btn bg-white  border-none '>{tool.icon}</button>
+        ))
+      }
     </div>
   )
 }
