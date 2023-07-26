@@ -18,10 +18,10 @@ const HeroSection = () => {
               Call to Action
             </button>
           </div>
-          <div className="order-1 md:order-2">
+          <div className="order-1  md:order-2">
             <img
-              className="w-full h-auto rounded-lg "
-              src="https://th.bing.com/th/id/R.bb0dbe3a15361712142bca054281127b?rik=vp8LFX8g%2byIJgw&pid=ImgRaw&r=0"
+              className="w-full h-auto rounded-lg p-8"
+              src="https://cdn.pixabay.com/photo/2018/03/15/13/52/earth-3228308_1280.png"
               alt="Hero"
             />
           </div>
