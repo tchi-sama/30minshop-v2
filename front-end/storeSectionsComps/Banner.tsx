@@ -1,30 +1,56 @@
 // HeroSection.js
 
-import React from 'react';
+import { heroType, sectionType } from "@/app/types/sectionsTypes";
+import React from "react";
+import { TbSectionSign } from "react-icons/tb";
 
-const HeroSection = () => {
+const HeroSection = ({ section }: { section: heroType }) => {
   return (
-    <div className="bg-white text-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div
+      style={{ background: section.properties.general?.backgroundColor }}
+      className=" text-gray-800"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1">
-            <h1 className="text-4xl font-bold mb-6">Lorem Ipsum</h1>
-            <p className="text-lg mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-              risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-              nec, ultricies sed, dolor.
-            </p>
-            <button className="bg-blue-500 text-white px-6 py-3 rounded-md text-lg font-medium">
-              Call to Action
-            </button>
+            {section.properties.title?.show && (
+              <h1
+                style={{ color: section.properties.title?.color }}
+                className="text-5xl font-bold mb-6"
+              >
+                {section.properties.title?.text}
+              </h1>
+            )}
+            {section.properties.subtitle?.show && (
+              <p
+                style={{ color: section.properties.subtitle?.color }}
+                className="text-lg mb-8"
+              >
+                {section.properties.subtitle?.text}
+              </p>
+            )}
+
+            {section.properties.ctaButton?.show && (
+              <button
+                className="btn "
+                style={{
+                  backgroundColor: section.properties.ctaButton?.bgColor,
+                  color: section.properties.ctaButton?.txtColor,
+                }}
+              >
+                {section.properties.ctaButton?.text}
+              </button>
+            )}
           </div>
-          <div className="order-1  md:order-2">
-            <img
-              className="w-full h-auto rounded-lg p-8"
-              src="https://cdn.pixabay.com/photo/2018/03/15/13/52/earth-3228308_1280.png"
-              alt="Hero"
-            />
-          </div>
+          {section.properties.heroImage?.show && (
+            <div className="order-1  md:order-2">
+              <img
+                className="w-full h-auto rounded-lg p-8"
+                src={section.properties.heroImage?.url}
+                alt="Hero"
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,6 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../GlobalRedux/store'
+import Header from "../../storeSectionsComps/Header"
+import Banner from "../../storeSectionsComps/Banner"
+import { headerType, heroType } from '../types/sectionsTypes'
 function Engine() {
     const store = useSelector((state:RootState)=>state.store.store)
   return (
@@ -9,9 +12,12 @@ function Engine() {
         store.pages[0].sections.map(section=>{
             switch (section.type) {
                 case "header":
-                    return <div>header</div>
+                    // return <div><Header section={section as headerType}/></div>
+                    return ""
                 case "hero":
-                    return <div>hero</div>
+                    return <div><Banner section={section as heroType}/></div>
+                default:
+                    break
             }
         })
         }

@@ -10,8 +10,8 @@ export interface toolsState {
 
 const initialState : toolsState = {
     toolSelected:0,
-    showLeftbar:true,
-    showRightbar:true,
+    showLeftbar:false,
+    showRightbar:false,
 }
 
 export const toolsSlice = createSlice({

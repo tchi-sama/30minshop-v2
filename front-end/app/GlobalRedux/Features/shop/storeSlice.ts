@@ -14,14 +14,35 @@ const initialState : storeState = {
             {
                 sections:[
                     {
-                        type:"header",
-                        properties:{
-                        }
-                    },
-                    {
-                        type:"hero",
-                        properties:{
-                        }
+                        type: 'hero',
+                        properties: {
+                            general: {
+                                height: 550,
+                                backgroundImage: 'iphones-store-bg.jpg', // URL to the hero background image for iPhones store
+                                backgroundColor: '#efefef',
+                            },
+                            heroImage: {
+                                url: 'https://th.bing.com/th/id/OIP.oanJ-t5ZEr7MsiAgclS7GAHaE7?pid=ImgDet&rs=1', // URL to the hero image of iPhones
+                                show: true,
+                            },
+                            title: {
+                                text: 'Welcome to the iPhone Store',
+                                color: '#000000',
+                                show: true,
+                            },
+                            subtitle: {
+                                text: 'Discover the Latest iPhone Models and Best Deals',
+                                color: '#000000',
+                                show: true,
+                            },
+                            ctaButton: {
+                                text: 'Explore iPhones',
+                                bgColor: '#007bff', // Blue button background color
+                                txtColor: '#ffffff', // White button text color
+                                url: '/iphones', // URL to the iPhones product page
+                                show: true,
+                            },
+                        },
                     },
                 ]
             }
