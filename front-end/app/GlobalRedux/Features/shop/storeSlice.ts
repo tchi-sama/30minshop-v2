@@ -14,6 +14,11 @@ const initialState : storeState = {
             {
                 sections:[
                     {
+                        type:"header",
+                        properties:{
+                        }
+                    },
+                    {
                         type:"hero",
                         properties:{
                         }
@@ -24,12 +29,12 @@ const initialState : storeState = {
     },
 }
 
-export const toolsSlice = createSlice({
+export const storeSlice = createSlice({
     name :"store",
     initialState,
     reducers:{
     }
 })
 
-export const {} = toolsSlice.actions;
-export default toolsSlice.reducer;
+export const {} = storeSlice.actions;
+export default storeSlice.reducer;

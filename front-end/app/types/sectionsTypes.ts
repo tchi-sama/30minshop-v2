@@ -25,16 +25,22 @@ export interface headerType {
 
         // props for the links
         links?:{
-            name:string
-            url:string
-            show:boolean
-        }[]
-        showLinks?:boolean
-        alignLinks?:"left"|"center"|"right"
+            linksArray?:{
+                name:string
+                url:string
+                show:boolean
+            }[]
+            show?:boolean
+            align?:"left"|"center"|"right"
+        }
 
         // props for the btns
-        showSearchButton?:boolean
-        showCartButton?:boolean
+        showSearchButton?:{
+            show:boolean
+        }
+        showCartButton?:{
+            show:boolean
+        }
     }
 }
 
@@ -42,15 +48,17 @@ export interface heroType {
     type: 'hero';
     properties: {
         // general
-        bannerHeight?:number;
-
-        // Props for the hero background image
-        backgroundImage?: string;
-        backgroundColor?: string;
+        general?:{
+            height?:number;
+            backgroundImage?: string;
+            backgroundColor?: string;
+        }
 
         // Props for the hero image
-        heroImage?: string;
-        showHeroImage?:boolean
+        heroImage?:{
+            url:string;
+            show:boolean;
+        }
 
         // Props for the hero content
         title?: {
@@ -58,6 +66,7 @@ export interface heroType {
             color:string;
             show:boolean;
         };
+
         subtitle?: {
             text:string;
             color:string;
