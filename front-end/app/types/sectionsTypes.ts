@@ -5,8 +5,10 @@ export interface headerType {
     type:'header'
     properties:{
         // general 
-        headerColor?:string
-        headerHeight?:number // between 20 and 30
+        general?:{
+            headerColor?:string
+            headerHeight?:number // between 20 and 30
+        }
 
         // props for the text logo
         logoText?:{

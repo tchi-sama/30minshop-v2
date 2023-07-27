@@ -14,15 +14,50 @@ const initialState : storeState = {
             {
                 sections:[
                     {
+                        type: 'header',
+                        properties: {
+                            general:{
+                                headerColor: '#fff', // Sky blue header background color
+                                headerHeight: 25, // Header height set to 25
+                            },
+                    
+                            logoText: {
+                                text: 'Cute Clothes', // Store name as the logo text
+                                color: '#800080', // Purple logo text color
+                                size: 24, // Logo text size set to 24
+                                show: true, // Logo text is displayed
+                            },
+                    
+                            links: {
+                                linksArray: [
+                                    { name: 'Home', url: '/', show: true },
+                                    { name: 'Collections', url: '/collections', show: true },
+                                    { name: 'About', url: '/about', show: true },
+                                    { name: 'Contact', url: '/contact', show: true },
+                                ],
+                                show: true, // Display the navigation links
+                                align: 'center', // Align the navigation links to the right
+                            },
+                    
+                            showSearchButton: {
+                                show: true, // Display the search button
+                            },
+                    
+                            showCartButton: {
+                                show: true, // Display the cart button
+                            },
+                        },
+                    },
+                    {
                         type: 'hero',
                         properties: {
                             general: {
                                 height: 550,
                                 backgroundImage: 'iphones-store-bg.jpg', // URL to the hero background image for iPhones store
-                                backgroundColor: '#efefef',
+                                backgroundColor: '#fff',
                             },
                             heroImage: {
-                                url: 'https://th.bing.com/th/id/OIP.oanJ-t5ZEr7MsiAgclS7GAHaE7?pid=ImgDet&rs=1', // URL to the hero image of iPhones
+                                url: '', // URL to the hero image of iPhones
                                 show: true,
                             },
                             title: {

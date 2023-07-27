@@ -12,8 +12,7 @@ function Engine() {
         store.pages[0].sections.map(section=>{
             switch (section.type) {
                 case "header":
-                    // return <div><Header section={section as headerType}/></div>
-                    return ""
+                    return <div><Header section={section as headerType}/></div>
                 case "hero":
                     return <div><Banner section={section as heroType}/></div>
                 default:

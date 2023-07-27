@@ -3,6 +3,8 @@
 import { heroType, sectionType } from "@/app/types/sectionsTypes";
 import React from "react";
 import { TbSectionSign } from "react-icons/tb";
+import dimg from "@/public/dimg.jpg"
+import Image from "next/image";
 
 const HeroSection = ({ section }: { section: heroType }) => {
   return (
@@ -44,9 +46,9 @@ const HeroSection = ({ section }: { section: heroType }) => {
           </div>
           {section.properties.heroImage?.show && (
             <div className="order-1  md:order-2">
-              <img
+              <Image
                 className="w-full h-auto rounded-lg p-8"
-                src={section.properties.heroImage?.url}
+                src={section.properties.heroImage.url || dimg}
                 alt="Hero"
               />
             </div>
