@@ -15,10 +15,11 @@ const Navbar = ({ section }: { section: headerType }) => {
           <div className="hidden md:block flex-1">
             <div style={{justifyContent:section.properties.links?.align}} className="px-8 flex items-center gap-4 w-full">
               {
-                section.properties.links?.linksArray?.map(link=>{
+                section.properties.links?.linksArray?.map((link,i)=>{
                   return (
                       link.show &&
                       <a
+                        key={i}
                         href="#"
                         className="text-gray-600 hover:text-gray-900  py-2 rounded-md text-sm font-medium"
                       >
