@@ -11,7 +11,7 @@ app.listen(port, () => {
 });
 
 app.get("/generate",async(req,res)=>{
-    const msg = "a store of kids clothes called kingBoy , use blue for cta button , and i want the links to align to left , without search icon"
+    const msg = "cactus store named cactusia , love dark green in background , and the links is home and about and contact and pots and cactus"
     const response = await openai.createChatCompletion({
     model:"gpt-3.5-turbo",
     messages: [
