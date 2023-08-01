@@ -13,12 +13,13 @@ const HeroSection = ({ section }: { section: heroType }) => {
       className=" text-gray-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-start items-center">
           <div className="order-2 md:order-1">
             {section.properties.title?.show && (
               <h1
                 style={{ color: section.properties.title?.color }}
-                className="text-5xl font-bold mb-6"
+                className="text-5xl font-bold mb-6 w-fit outline-gray-200 "
+                contentEditable
               >
                 {section.properties.title?.text}
               </h1>
@@ -26,7 +27,8 @@ const HeroSection = ({ section }: { section: heroType }) => {
             {section.properties.subtitle?.show && (
               <p
                 style={{ color: section.properties.subtitle?.color }}
-                className="text-lg mb-8"
+                className="text-lg mb-8 outline-gray-200 w-fit"
+                contentEditable
               >
                 {section.properties.subtitle?.text}
               </p>
@@ -34,13 +36,18 @@ const HeroSection = ({ section }: { section: heroType }) => {
 
             {section.properties.ctaButton?.show && (
               <button
-                className="btn "
+                className="btn  "
                 style={{
                   backgroundColor: section.properties.ctaButton?.bgColor,
                   color: section.properties.ctaButton?.txtColor,
                 }}
               >
+                <span
+                contentEditable
+                className="outline-[#fff3] "
+                >
                 {section.properties.ctaButton?.text}
+                </span>
               </button>
             )}
           </div>

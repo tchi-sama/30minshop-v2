@@ -9,7 +9,7 @@ function Engine() {
   return (
     <div>
         {
-        store.pages[0].sections.map(section=>{
+        store.pages[0]?.sections.map(section=>{
             switch (section.type) {
                 case "header":
                     return <div><Header section={section as headerType}/></div>

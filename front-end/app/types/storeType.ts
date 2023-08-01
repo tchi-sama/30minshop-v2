@@ -10,5 +10,6 @@ export interface storeState {
     };
 }
 export interface pageType {
+    name:string
     sections:sectionType[]
 }
